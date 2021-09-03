@@ -1,1 +1,181 @@
-<p>add works!</p>
+
+<h1>Nuevo Usuario <small>{{ user.nombre }}</small></h1>
+
+<div fxLayout="row" fxLayoutGap="40px" fxLayout.xs="column">
+
+    <div fxFlex="70" fxLayout="column">
+        
+        <mat-form-field fxFlex="100">
+            <mat-label>Nombre Completo</mat-label>
+            <input matInput
+                   type="text"
+                   [(ngModel)]="user.nombre"
+                   required>
+        </mat-form-field>
+        
+        <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column">
+            <mat-form-field fxFlex="100">
+                <mat-label>Contraseña</mat-label>
+                <input matInput
+                       type="text"
+                       [(ngModel)]="user.password"
+                       required>
+            </mat-form-field>
+            
+            <mat-form-field fxFlex="100">
+                <mat-label>Rol</mat-label>
+                <mat-select [(ngModel)]="user.rol" required>
+                    <mat-option *ngFor="let rol of roles"
+                                [value]="rol.id">
+                        {{ rol.desc }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        
+        <br><br>
+
+        <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column">
+            <mat-form-field fxFlex="100">
+                <mat-label>Teléfono</mat-label>
+                <input matInput
+                       type="number"
+                       [(ngModel)]="user.cel"
+                       required>
+            </mat-form-field>
+            
+            <mat-form-field fxFlex="100">
+                <mat-label>Puesto</mat-label>
+                <input matInput
+                       type="text"
+                       [(ngModel)]="user.puesto"
+                       required>
+            </mat-form-field>
+        </div>
+
+        
+        <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column">
+            <mat-form-field fxFlex="100">
+                <mat-label>Correo</mat-label>
+                <input matInput
+                       type="text"
+                       [(ngModel)]="user.correo"
+                       required>
+            </mat-form-field>
+            
+            <mat-form-field  fxFlex="100">
+                <mat-label>Empresa</mat-label>
+                <mat-select [(ngModel)]="user.empresa" required>
+                    <mat-option *ngFor="let empresa of empresas"
+                                [value]="empresa.id">
+                        {{ empresa.desc }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        
+        <br><br>
+        
+        <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column">
+            <mat-form-field fxFlex="100">
+                <mat-label>Calle y número</mat-label>
+                <input matInput
+                       type="text"
+                       [(ngModel)]="user.calle"
+                       required>
+            </mat-form-field>
+            
+            <mat-form-field  fxFlex="100">
+                <mat-label>Colonia</mat-label>
+                <input matInput
+                       type="text"
+                       [(ngModel)]="user.colonia"
+                       required>
+            </mat-form-field>
+        </div>
+        
+        <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column">
+            <mat-form-field fxFlex="100">
+                <mat-label>Municipio</mat-label>
+                <input matInput
+                       type="text"
+                       [(ngModel)]="user.municipio"
+                       required>
+            </mat-form-field>
+            
+            <mat-form-field  fxFlex="100">
+                <mat-label>Estado</mat-label>
+                <input matInput
+                       type="text"
+                       [(ngModel)]="user.edo"
+                       required>
+            </mat-form-field>
+        </div>
+        
+        <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column">
+            <mat-form-field fxFlex="100">
+                <mat-label>Código Postal</mat-label>
+                <input matInput
+                       type="number"
+                       [(ngModel)]="user.cp"
+                       required>
+            </mat-form-field>
+        </div>
+        
+        <br><br>
+        
+        <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column">
+            <mat-form-field fxFlex="100">
+                <mat-label>CURP</mat-label>
+                <input matInput
+                       type="text"
+                       [(ngModel)]="user.curp"
+                       required>
+            </mat-form-field>
+            
+            <mat-form-field  fxFlex="100">
+                <mat-label>Fecha de nacimiento (dd-mm-aaaa)</mat-label>
+                <input matInput
+                       type="text"
+                       [(ngModel)]="user.fecha"
+                       required>
+            </mat-form-field>
+        </div>
+        
+        <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column">
+            <mat-form-field fxFlex="100">
+                <mat-label>Género</mat-label>
+                <mat-select [(ngModel)]="user.genero" required>
+                    <mat-option *ngFor="let gen of genero"
+                                [value]="gen.id">
+                        {{ gen.desc }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <mat-form-field  fxFlex="100">
+                <mat-label>Estado civil</mat-label>
+                <mat-select [(ngModel)]="user.estado" required>
+                    <mat-option *ngFor="let edo of estado"
+                                [value]="edo.id">
+                        {{ edo.desc }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        
+        <br>
+        
+        <button color="warn"
+                mat-raised-button
+                (click)="save()">
+            <mat-icon>edit</mat-icon>
+                Guardar
+        </button>
+        
+    </div>
+    <div fxFlex="30">
+        <img [src]="" alt="">
+    </div>
+</div>
+

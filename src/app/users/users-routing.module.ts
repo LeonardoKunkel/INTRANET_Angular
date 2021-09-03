@@ -1,9 +1,11 @@
-import { SearchComponent } from './pages/search/search.component';
-import { ListComponent } from './pages/list/list.component';
-import { AddComponent } from './pages/add/add.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+
+import { AddComponent } from './pages/add/add.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ListComponent } from './pages/list/list.component';
+import { SearchComponent } from './pages/search/search.component';
+import { UserComponent } from './pages/user/user.component';
 
 const routes: Routes = [
   {
@@ -14,7 +16,8 @@ const routes: Routes = [
       { path: 'edit/:id', component: AddComponent },
       { path: 'list', component: ListComponent },
       { path: 'search', component: SearchComponent },
-      { path: '**', redirectTo: 'search' }
+      { path: ':id', component: UserComponent },
+      { path: '**', redirectTo: 'list' }
     ]
   }
 ]

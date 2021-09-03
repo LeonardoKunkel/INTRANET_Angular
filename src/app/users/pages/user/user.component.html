@@ -1,0 +1,61 @@
+
+<mat-grid-list cols="1" *ngIf="!user; else divUser">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divUser>
+
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="30px">
+        
+        <div fxFlex="50">
+            
+            <h1><small>Nombre: </small> <b>{{ user.nombre }}</b></h1>
+            <mat-divider></mat-divider>
+            <br>
+            <h1><small>Correo: </small> <b>{{ user.correo }}</b></h1>
+            <mat-divider></mat-divider>
+            <br>
+            <h1><small>Puesto: </small> <b>{{ user.puesto }}</b></h1>
+            <mat-divider></mat-divider>
+            <br>
+            <h1><small>Empresa: </small> <b>{{ user.empresa }}</b></h1>
+            <mat-divider></mat-divider>
+            <br>
+            <h1><small>Fecha de nacimiento: </small> <b>{{ user.fecha }}</b></h1>
+            <mat-divider></mat-divider>
+            <br>
+            <h1><small>Celular: </small> <b>{{ user.cel }}</b></h1>
+            <mat-divider></mat-divider>
+            <br>
+            <h1><small>CURP: </small> <b>{{ user.curp }}</b></h1>
+            <mat-divider></mat-divider>
+            <br>
+            <h1><small>Dirección: </small> <b>{{ user.calle }}, {{ user.colonia }}, {{ user.municipio }}, {{ user.cp }}, {{ user.edo }}.</b></h1>
+            <mat-divider></mat-divider>
+            <br>
+            <h1><small>Género: </small> <b>{{ user.genero }}</b></h1>
+            <mat-divider></mat-divider>
+            <br>
+            <h1><small>Estado civil: </small> <b>{{ user.estado }}</b></h1>
+            <mat-divider></mat-divider>
+            <br>
+            
+        </div>
+        
+        <div fxFlex="50">
+            <img [src]="user | image">
+            <br>
+            
+        </div>
+        
+        
+    
+    </div>
+
+    <button mat-button
+                    color="warn"
+                    (click)="goBack()"> Regresar</button>
+</ng-template>
+

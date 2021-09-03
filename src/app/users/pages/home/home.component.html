@@ -16,21 +16,21 @@
             <a routerLink="./list"
                mat-list-item
                (click)="sidenav.toggle()">
-                <mat-icon mat-list-icon>add</mat-icon>
+                <mat-icon mat-list-icon>groups</mat-icon>
                 <span>Lista de Usuarios</span>
             </a>
             
             <a routerLink="./add"
                mat-list-item
                (click)="sidenav.toggle()">
-                <mat-icon mat-list-icon>add</mat-icon>
+                <mat-icon mat-list-icon>person_add</mat-icon>
                 <span>Agregar Usuario</span>
             </a>
             
             <a routerLink="./search"
                mat-list-item
                (click)="sidenav.toggle()">
-                <mat-icon mat-list-icon>add</mat-icon>
+                <mat-icon mat-list-icon>person_outline</mat-icon>
                 <span>Buscar Usuario</span>
             </a>
             
@@ -38,18 +38,34 @@
         
     </mat-sidenav>
     
-    <mat-toolbar>
+    <mat-toolbar color="primary">
+    
         <button mat-button
                 (click)="sidenav.toggle()">
             <mat-icon>menu</mat-icon>        
         </button>
         
+        <mat-button-toggle (click)="onSetTheme('dark-theme')">
+            <mat-icon>dark_mode</mat-icon>
+        </mat-button-toggle>
+        
+        <!-- <button mat-raised-button (click)="onSetTheme('dark-theme')">
+            <mat-icon>dark_mode</mat-icon>
+        </button>
+        
+        <button mat-raised-button (click)="onSetTheme('light-theme')">
+            <mat-icon>light_mode</mat-icon>
+        </button> -->
+        
         <span class="spacer"></span>
         
-        <!-- <span>{{ auth }}</span> -->
+        <pre>{{ user }}</pre>
         
         <button mat-button
-                (click)="logout()"></button>
+                (click)="logout()">
+            Logout
+            <mat-icon>logout</mat-icon>
+        </button>
     </mat-toolbar>
     
     <div class="container">
